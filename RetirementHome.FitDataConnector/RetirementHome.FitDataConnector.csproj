@@ -7,4 +7,9 @@
         <Nullable>enable</Nullable>
     </PropertyGroup>
 
+    <ItemGroup>
+        <PackageReference Include="Google.Apis.Discovery.v1" Version="1.62.0"/>
+        <PackageReference Include="Google.Apis.Fitness.v1" Version="1.62.0.3105"/>
+    </ItemGroup>
+
 </Project>
