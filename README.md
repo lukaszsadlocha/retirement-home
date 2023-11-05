@@ -36,9 +36,11 @@
 
 
 ## Links
-https://developers.google.com/api-client-library/dotnet/apis/fitness/v1
-
-
+1. [Markdown Cheat Sheet](https://www.markdownguide.org/cheat-sheet/)
+1. [C# Corner - Getting Started](https://www.c-sharpcorner.com/article/getting-started-with-google-fitness-rest-api-part-2/)
+1. [Google Api Playground](https://developers.google.com/oauthplayground/)
+1. [Example of C# code using FitnessApi](https://keestalkstech.com/2016/07/getting-your-weight-from-google-fit-with-c/)
+1. [Official Google FitnessApi Doc](https://developers.google.com/api-client-library/dotnet/apis/fitness/v1)
 
 ## Credential
 Google Api Key is on Slack!
