@@ -2,6 +2,9 @@
 using Google.Apis.Fitness.v1;
 using Google.Apis.Fitness.v1.Data;
 using Google.Apis.Services;
+using Microsoft.Extensions.Configuration;
+using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.Hosting;
 
 namespace RetirementHome.FitDataConnector;
 
@@ -12,13 +15,21 @@ namespace RetirementHome.FitDataConnector;
 internal class Program
 {
     [STAThread]
-    private static void Main(string[] args)
+    private static async Task Main(string[] args)
     {
-        Console.WriteLine("Discovery API Sample");
-        Console.WriteLine("====================");
         try
         {
-            new Program().Run().Wait();
+            // Setup Host
+            var host = CreateDefaultBuilder().Build();
+
+            // Invoke Worker
+            using IServiceScope serviceScope = host.Services.CreateScope();
+            IServiceProvider provider = serviceScope.ServiceProvider;
+            var workerInstance = provider.GetRequiredService<FitDataWorker>();
+            await workerInstance.DoWork();
+
+            host.Run();
+
         }
         catch (AggregateException ex)
         {
@@ -29,31 +40,20 @@ internal class Program
         Console.ReadKey();
     }
 
-    private async Task Run()
+    static IHostBuilder CreateDefaultBuilder()
     {
-        // Create the service.
-
-        var clientServiceInitializer = new BaseClientService.Initializer
-        {
-            ApplicationName = "Retirement home",
-            ApiKey = "AIzaSyCJDlHFpt1NI8_354BQf9u2b8XdlNHIXOM"
-        };
-
-        var service = new FitnessService(clientServiceInitializer);
-
-        var query = new WeightQuery(service);
-        var list = query.QueryWeightPerDay(DateTime.Now.AddDays(-60), DateTime.Now);
-
-        var dataTable = list
-            .Select(w => new object[]
+        return Host.CreateDefaultBuilder()
+            .ConfigureAppConfiguration(app =>
             {
-                w.Stamp,
-                w.MinWeight,
-                w.MaxWeight
+                app.AddJsonFile("appsettings.json");
             })
-            .ToArray();
+            .ConfigureServices(services =>
+            {
+                services.AddSingleton<FitDataWorker>();
+            });
     }
 }
+
 
 /// <summary>
 /// Weight data point.
