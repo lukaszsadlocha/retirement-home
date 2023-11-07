@@ -7,7 +7,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RetirementHome.FitDataConne
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{EC8AED42-70F2-4CC8-851D-D2C47D9339D1}"
 	ProjectSection(SolutionItems) = preProject
+		DataSourcesFromPlayground.json = DataSourcesFromPlayground.json
 		README.md = README.md
+		RequestBodyAggregate4DaysOfSteps.json = RequestBodyAggregate4DaysOfSteps.json
 	EndProjectSection
 EndProject
 Global
@@ -23,5 +25,8 @@ Global
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {F155005E-2E72-417B-A9E3-51DD61C81BFB}
 	EndGlobalSection
 EndGlobal

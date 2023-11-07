@@ -44,3 +44,16 @@
 
 ## Credential
 Google Api Key is on Slack!
+
+## Misc
+- GoogleApi Playground - get all datasets
+Request URI https://fitness.googleapis.com/fitness/v1/users/me/dataSources
+- Google Api Playground - get height https://fitness.googleapis.com/fitness/v1/users/me/dataSources/raw:com.google.height:com.google.android.apps.fitness:user_input/dataPointChanges
+
+---
+
+# How to set it up for a rin
+
+1. Creare a file `client_secrets.json` in the project folder with Google OAuth Token (you can get it from: https://console.cloud.google.com/apis/credentials
+1. Mark it property in Visual Studio as "Copy Always"
+1. Run the app

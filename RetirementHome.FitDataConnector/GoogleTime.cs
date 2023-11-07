@@ -1,5 +1,11 @@
-    namespace RetirementHome.FitDataConnector; 
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 
+namespace RetirementHome.FitDataConnector
+{
     /// <summary>
     /// Helps converting between miliseconds since 1970-1-1 and C# <c>DateTime</c> object.
     /// </summary>
@@ -54,7 +60,7 @@
 
             return new GoogleTime
             {
-                TotalMilliseconds = (long)(nanoseconds.GetValueOrDefault(0) / 1000000)
+                TotalMilliseconds = nanoseconds.GetValueOrDefault(0) / 1000000
             };
         }
 
@@ -78,7 +84,7 @@
         {
             return new GoogleTime
             {
-                TotalMilliseconds = this.TotalMilliseconds + (long)timeSpan.TotalMilliseconds
+                TotalMilliseconds = TotalMilliseconds + (long)timeSpan.TotalMilliseconds
             };
         }
 
@@ -88,6 +94,7 @@
         /// <returns>The date time.</returns>
         public DateTime ToDateTime()
         {
-            return zero.AddMilliseconds(this.TotalMilliseconds);
+            return zero.AddMilliseconds(TotalMilliseconds);
         }
     }
+}

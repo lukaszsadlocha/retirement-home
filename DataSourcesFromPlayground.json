@@ -1,0 +1,707 @@
+{
+  "dataSource": [
+    {
+      "dataStreamName": "top_level",
+      "dataType": {
+        "field": [
+          {
+            "name": "duration",
+            "format": "integer"
+          }
+        ],
+        "name": "com.google.active_minutes"
+      },
+      "dataQualityStandard": [],
+      "application": {
+        "packageName": "com.google.android.fit"
+      },
+      "device": {
+        "model": "MI 9",
+        "version": "",
+        "type": "phone",
+        "uid": "fb511da9",
+        "manufacturer": "Xiaomi"
+      },
+      "dataStreamId": "derived:com.google.active_minutes:com.google.android.fit:Xiaomi:MI 9:fb511da9:top_level",
+      "type": "derived"
+    },
+    {
+      "dataQualityStandard": [],
+      "dataType": {
+        "field": [
+          {
+            "name": "duration",
+            "format": "integer"
+          }
+        ],
+        "name": "com.google.active_minutes"
+      },
+      "dataStreamName": "merge_active_minutes",
+      "application": {
+        "packageName": "com.google.android.gms"
+      },
+      "dataStreamId": "derived:com.google.active_minutes:com.google.android.gms:merge_active_minutes",
+      "type": "derived"
+    },
+    {
+      "dataStreamName": "top_level",
+      "dataType": {
+        "field": [
+          {
+            "name": "activity",
+            "format": "integer"
+          }
+        ],
+        "name": "com.google.activity.segment"
+      },
+      "dataQualityStandard": [],
+      "application": {
+        "packageName": "com.google.android.fit"
+      },
+      "device": {
+        "model": "MI 9",
+        "version": "",
+        "type": "phone",
+        "uid": "fb511da9",
+        "manufacturer": "Xiaomi"
+      },
+      "dataStreamId": "derived:com.google.activity.segment:com.google.android.fit:Xiaomi:MI 9:fb511da9:top_level",
+      "type": "derived"
+    },
+    {
+      "dataQualityStandard": [],
+      "dataType": {
+        "field": [
+          {
+            "name": "activity",
+            "format": "integer"
+          }
+        ],
+        "name": "com.google.activity.segment"
+      },
+      "dataStreamName": "merge_activity_segments",
+      "application": {
+        "packageName": "com.google.android.gms"
+      },
+      "dataStreamId": "derived:com.google.activity.segment:com.google.android.gms:merge_activity_segments",
+      "type": "derived"
+    },
+    {
+      "dataQualityStandard": [],
+      "dataType": {
+        "field": [
+          {
+            "name": "activity",
+            "format": "integer"
+          }
+        ],
+        "name": "com.google.activity.segment"
+      },
+      "dataStreamName": "merge_activity_segments_local",
+      "application": {
+        "packageName": "com.google.android.gms"
+      },
+      "dataStreamId": "derived:com.google.activity.segment:com.google.android.gms:merge_activity_segments_local",
+      "type": "derived"
+    },
+    {
+      "dataQualityStandard": [],
+      "dataType": {
+        "field": [
+          {
+            "name": "calories",
+            "format": "floatPoint"
+          }
+        ],
+        "name": "com.google.calories.bmr"
+      },
+      "dataStreamName": "merged",
+      "application": {
+        "packageName": "com.google.android.gms"
+      },
+      "dataStreamId": "derived:com.google.calories.bmr:com.google.android.gms:merged",
+      "type": "derived"
+    },
+    {
+      "dataStreamName": "top_level",
+      "dataType": {
+        "field": [
+          {
+            "name": "calories",
+            "format": "floatPoint"
+          }
+        ],
+        "name": "com.google.calories.expended"
+      },
+      "dataQualityStandard": [],
+      "application": {
+        "packageName": "com.google.android.fit"
+      },
+      "device": {
+        "model": "MI 9",
+        "version": "",
+        "type": "phone",
+        "uid": "fb511da9",
+        "manufacturer": "Xiaomi"
+      },
+      "dataStreamId": "derived:com.google.calories.expended:com.google.android.fit:Xiaomi:MI 9:fb511da9:top_level",
+      "type": "derived"
+    },
+    {
+      "dataQualityStandard": [],
+      "dataType": {
+        "field": [
+          {
+            "name": "calories",
+            "format": "floatPoint"
+          }
+        ],
+        "name": "com.google.calories.expended"
+      },
+      "dataStreamName": "merge_calories_expended",
+      "application": {
+        "packageName": "com.google.android.gms"
+      },
+      "dataStreamId": "derived:com.google.calories.expended:com.google.android.gms:merge_calories_expended",
+      "type": "derived"
+    },
+    {
+      "dataStreamName": "top_level",
+      "dataType": {
+        "field": [
+          {
+            "name": "distance",
+            "format": "floatPoint"
+          }
+        ],
+        "name": "com.google.distance.delta"
+      },
+      "dataQualityStandard": [],
+      "application": {
+        "packageName": "com.google.android.fit"
+      },
+      "device": {
+        "model": "MI 9",
+        "version": "",
+        "type": "phone",
+        "uid": "fb511da9",
+        "manufacturer": "Xiaomi"
+      },
+      "dataStreamId": "derived:com.google.distance.delta:com.google.android.fit:Xiaomi:MI 9:fb511da9:top_level",
+      "type": "derived"
+    },
+    {
+      "dataQualityStandard": [],
+      "dataType": {
+        "field": [
+          {
+            "name": "distance",
+            "format": "floatPoint"
+          }
+        ],
+        "name": "com.google.distance.delta"
+      },
+      "dataStreamName": "merge_distance_delta",
+      "application": {
+        "packageName": "com.google.android.gms"
+      },
+      "dataStreamId": "derived:com.google.distance.delta:com.google.android.gms:merge_distance_delta",
+      "type": "derived"
+    },
+    {
+      "dataStreamName": "top_level",
+      "dataType": {
+        "field": [
+          {
+            "name": "intensity",
+            "format": "floatPoint"
+          }
+        ],
+        "name": "com.google.heart_minutes"
+      },
+      "dataQualityStandard": [],
+      "application": {
+        "packageName": "com.google.android.fit"
+      },
+      "device": {
+        "model": "MI 9",
+        "version": "",
+        "type": "phone",
+        "uid": "fb511da9",
+        "manufacturer": "Xiaomi"
+      },
+      "dataStreamId": "derived:com.google.heart_minutes:com.google.android.fit:Xiaomi:MI 9:fb511da9:top_level",
+      "type": "derived"
+    },
+    {
+      "dataQualityStandard": [],
+      "dataType": {
+        "field": [
+          {
+            "name": "intensity",
+            "format": "floatPoint"
+          }
+        ],
+        "name": "com.google.heart_minutes"
+      },
+      "dataStreamName": "merge_heart_minutes",
+      "application": {
+        "packageName": "com.google.android.gms"
+      },
+      "dataStreamId": "derived:com.google.heart_minutes:com.google.android.gms:merge_heart_minutes",
+      "type": "derived"
+    },
+    {
+      "dataQualityStandard": [],
+      "dataType": {
+        "field": [
+          {
+            "name": "bpm",
+            "format": "floatPoint"
+          }
+        ],
+        "name": "com.google.heart_rate.bpm"
+      },
+      "dataStreamName": "merge_heart_rate_bpm",
+      "application": {
+        "packageName": "com.google.android.gms"
+      },
+      "dataStreamId": "derived:com.google.heart_rate.bpm:com.google.android.gms:merge_heart_rate_bpm",
+      "type": "derived"
+    },
+    {
+      "dataQualityStandard": [],
+      "dataType": {
+        "field": [
+          {
+            "name": "bpm",
+            "format": "floatPoint"
+          }
+        ],
+        "name": "com.google.heart_rate.bpm"
+      },
+      "dataStreamName": "resting_heart_rate<-merge_heart_rate_bpm",
+      "application": {
+        "packageName": "com.google.android.gms"
+      },
+      "dataStreamId": "derived:com.google.heart_rate.bpm:com.google.android.gms:resting_heart_rate<-merge_heart_rate_bpm",
+      "type": "derived"
+    },
+    {
+      "dataQualityStandard": [],
+      "dataType": {
+        "field": [
+          {
+            "name": "height",
+            "format": "floatPoint"
+          }
+        ],
+        "name": "com.google.height"
+      },
+      "dataStreamName": "merge_height",
+      "application": {
+        "packageName": "com.google.android.gms"
+      },
+      "dataStreamId": "derived:com.google.height:com.google.android.gms:merge_height",
+      "type": "derived"
+    },
+    {
+      "dataQualityStandard": [],
+      "dataType": {
+        "field": [
+          {
+            "name": "sleep_segment_type",
+            "format": "integer"
+          }
+        ],
+        "name": "com.google.sleep.segment"
+      },
+      "dataStreamName": "merged",
+      "application": {
+        "packageName": "com.google.android.gms"
+      },
+      "dataStreamId": "derived:com.google.sleep.segment:com.google.android.gms:merged",
+      "type": "derived"
+    },
+    {
+      "dataStreamName": "top_level",
+      "dataType": {
+        "field": [
+          {
+            "name": "speed",
+            "format": "floatPoint"
+          }
+        ],
+        "name": "com.google.speed"
+      },
+      "dataQualityStandard": [],
+      "application": {
+        "packageName": "com.google.android.fit"
+      },
+      "device": {
+        "model": "MI 9",
+        "version": "",
+        "type": "phone",
+        "uid": "fb511da9",
+        "manufacturer": "Xiaomi"
+      },
+      "dataStreamId": "derived:com.google.speed:com.google.android.fit:Xiaomi:MI 9:fb511da9:top_level",
+      "type": "derived"
+    },
+    {
+      "dataQualityStandard": [],
+      "dataType": {
+        "field": [
+          {
+            "name": "speed",
+            "format": "floatPoint"
+          }
+        ],
+        "name": "com.google.speed"
+      },
+      "dataStreamName": "merge_speed",
+      "application": {
+        "packageName": "com.google.android.gms"
+      },
+      "dataStreamId": "derived:com.google.speed:com.google.android.gms:merge_speed",
+      "type": "derived"
+    },
+    {
+      "dataStreamName": "top_level",
+      "dataType": {
+        "field": [
+          {
+            "name": "steps",
+            "format": "integer"
+          }
+        ],
+        "name": "com.google.step_count.delta"
+      },
+      "dataQualityStandard": [],
+      "application": {
+        "packageName": "com.google.android.fit"
+      },
+      "device": {
+        "model": "MI 9",
+        "version": "",
+        "type": "phone",
+        "uid": "fb511da9",
+        "manufacturer": "Xiaomi"
+      },
+      "dataStreamId": "derived:com.google.step_count.delta:com.google.android.fit:Xiaomi:MI 9:fb511da9:top_level",
+      "type": "derived"
+    },
+    {
+      "dataQualityStandard": [],
+      "dataType": {
+        "field": [
+          {
+            "name": "steps",
+            "format": "integer"
+          }
+        ],
+        "name": "com.google.step_count.delta"
+      },
+      "dataStreamName": "estimated_steps",
+      "application": {
+        "packageName": "com.google.android.gms"
+      },
+      "dataStreamId": "derived:com.google.step_count.delta:com.google.android.gms:estimated_steps",
+      "type": "derived"
+    },
+    {
+      "dataQualityStandard": [],
+      "dataType": {
+        "field": [
+          {
+            "name": "steps",
+            "format": "integer"
+          }
+        ],
+        "name": "com.google.step_count.delta"
+      },
+      "dataStreamName": "merge_step_deltas",
+      "application": {
+        "packageName": "com.google.android.gms"
+      },
+      "dataStreamId": "derived:com.google.step_count.delta:com.google.android.gms:merge_step_deltas",
+      "type": "derived"
+    },
+    {
+      "dataQualityStandard": [],
+      "dataType": {
+        "field": [
+          {
+            "name": "weight",
+            "format": "floatPoint"
+          }
+        ],
+        "name": "com.google.weight"
+      },
+      "dataStreamName": "merge_weight",
+      "application": {
+        "packageName": "com.google.android.gms"
+      },
+      "dataStreamId": "derived:com.google.weight:com.google.android.gms:merge_weight",
+      "type": "derived"
+    },
+    {
+      "dataStreamName": "",
+      "dataType": {
+        "field": [
+          {
+            "name": "activity",
+            "format": "integer"
+          }
+        ],
+        "name": "com.google.activity.segment"
+      },
+      "dataQualityStandard": [],
+      "application": {
+        "packageName": "com.fossil.wearables.fossil"
+      },
+      "device": {
+        "model": "Fossil Device",
+        "version": "",
+        "type": "watch",
+        "uid": "23da69ab",
+        "manufacturer": "Fossil"
+      },
+      "dataStreamId": "raw:com.google.activity.segment:com.fossil.wearables.fossil:Fossil:Fossil Device:23da69ab:",
+      "type": "raw"
+    },
+    {
+      "dataStreamName": "",
+      "dataType": {
+        "field": [
+          {
+            "name": "calories",
+            "format": "floatPoint"
+          }
+        ],
+        "name": "com.google.calories.expended"
+      },
+      "dataQualityStandard": [],
+      "application": {
+        "packageName": "com.fossil.wearables.fossil"
+      },
+      "device": {
+        "model": "Fossil Device",
+        "version": "",
+        "type": "watch",
+        "uid": "23da69ab",
+        "manufacturer": "Fossil"
+      },
+      "dataStreamId": "raw:com.google.calories.expended:com.fossil.wearables.fossil:Fossil:Fossil Device:23da69ab:",
+      "type": "raw"
+    },
+    {
+      "dataStreamName": "",
+      "dataType": {
+        "field": [
+          {
+            "name": "calories",
+            "format": "floatPoint"
+          }
+        ],
+        "name": "com.google.calories.expended"
+      },
+      "dataQualityStandard": [],
+      "application": {
+        "packageName": "com.fossil.wearables.fossil"
+      },
+      "device": {
+        "model": "Fossil Device",
+        "version": "",
+        "type": "watch",
+        "uid": "b6733254",
+        "manufacturer": "Fossil"
+      },
+      "dataStreamId": "raw:com.google.calories.expended:com.fossil.wearables.fossil:Fossil:Fossil Device:b6733254:",
+      "type": "raw"
+    },
+    {
+      "dataStreamName": "",
+      "dataType": {
+        "field": [
+          {
+            "name": "distance",
+            "format": "floatPoint"
+          }
+        ],
+        "name": "com.google.distance.delta"
+      },
+      "dataQualityStandard": [],
+      "application": {
+        "packageName": "com.fossil.wearables.fossil"
+      },
+      "device": {
+        "model": "Fossil Device",
+        "version": "",
+        "type": "watch",
+        "uid": "23da69ab",
+        "manufacturer": "Fossil"
+      },
+      "dataStreamId": "raw:com.google.distance.delta:com.fossil.wearables.fossil:Fossil:Fossil Device:23da69ab:",
+      "type": "raw"
+    },
+    {
+      "dataStreamName": "",
+      "dataType": {
+        "field": [
+          {
+            "name": "distance",
+            "format": "floatPoint"
+          }
+        ],
+        "name": "com.google.distance.delta"
+      },
+      "dataQualityStandard": [],
+      "application": {
+        "packageName": "com.fossil.wearables.fossil"
+      },
+      "device": {
+        "model": "Fossil Device",
+        "version": "",
+        "type": "watch",
+        "uid": "b6733254",
+        "manufacturer": "Fossil"
+      },
+      "dataStreamId": "raw:com.google.distance.delta:com.fossil.wearables.fossil:Fossil:Fossil Device:b6733254:",
+      "type": "raw"
+    },
+    {
+      "dataStreamName": "",
+      "dataType": {
+        "field": [
+          {
+            "name": "bpm",
+            "format": "floatPoint"
+          }
+        ],
+        "name": "com.google.heart_rate.bpm"
+      },
+      "dataQualityStandard": [],
+      "application": {
+        "packageName": "com.fossil.wearables.fossil"
+      },
+      "device": {
+        "model": "Fossil Device",
+        "version": "",
+        "type": "watch",
+        "uid": "23da69ab",
+        "manufacturer": "Fossil"
+      },
+      "dataStreamId": "raw:com.google.heart_rate.bpm:com.fossil.wearables.fossil:Fossil:Fossil Device:23da69ab:",
+      "type": "raw"
+    },
+    {
+      "dataQualityStandard": [],
+      "dataType": {
+        "field": [
+          {
+            "name": "height",
+            "format": "floatPoint"
+          }
+        ],
+        "name": "com.google.height"
+      },
+      "dataStreamName": "user_input",
+      "application": {
+        "packageName": "com.google.android.apps.fitness"
+      },
+      "dataStreamId": "raw:com.google.height:com.google.android.apps.fitness:user_input",
+      "type": "raw"
+    },
+    {
+      "dataQualityStandard": [],
+      "dataType": {
+        "field": [
+          {
+            "name": "steps",
+            "format": "integer"
+          }
+        ],
+        "name": "com.google.step_count.cumulative"
+      },
+      "dataStreamName": "pedometer  Non-wakeup",
+      "device": {
+        "model": "MI 9",
+        "version": "",
+        "type": "phone",
+        "uid": "fb511da9",
+        "manufacturer": "Xiaomi"
+      },
+      "dataStreamId": "raw:com.google.step_count.cumulative:Xiaomi:MI 9:fb511da9:pedometer  Non-wakeup",
+      "type": "raw"
+    },
+    {
+      "dataStreamName": "",
+      "dataType": {
+        "field": [
+          {
+            "name": "steps",
+            "format": "integer"
+          }
+        ],
+        "name": "com.google.step_count.delta"
+      },
+      "dataQualityStandard": [],
+      "application": {
+        "packageName": "com.fossil.wearables.fossil"
+      },
+      "device": {
+        "model": "Fossil Device",
+        "version": "",
+        "type": "watch",
+        "uid": "23da69ab",
+        "manufacturer": "Fossil"
+      },
+      "dataStreamId": "raw:com.google.step_count.delta:com.fossil.wearables.fossil:Fossil:Fossil Device:23da69ab:",
+      "type": "raw"
+    },
+    {
+      "dataStreamName": "",
+      "dataType": {
+        "field": [
+          {
+            "name": "steps",
+            "format": "integer"
+          }
+        ],
+        "name": "com.google.step_count.delta"
+      },
+      "dataQualityStandard": [],
+      "application": {
+        "packageName": "com.fossil.wearables.fossil"
+      },
+      "device": {
+        "model": "Fossil Device",
+        "version": "",
+        "type": "watch",
+        "uid": "b6733254",
+        "manufacturer": "Fossil"
+      },
+      "dataStreamId": "raw:com.google.step_count.delta:com.fossil.wearables.fossil:Fossil:Fossil Device:b6733254:",
+      "type": "raw"
+    },
+    {
+      "dataQualityStandard": [],
+      "dataType": {
+        "field": [
+          {
+            "name": "weight",
+            "format": "floatPoint"
+          }
+        ],
+        "name": "com.google.weight"
+      },
+      "dataStreamName": "user_input",
+      "application": {
+        "packageName": "com.google.android.apps.fitness"
+      },
+      "dataStreamId": "raw:com.google.weight:com.google.android.apps.fitness:user_input",
+      "type": "raw"
+    }
+  ]
+}
