@@ -14,7 +14,6 @@
 - GA = Google Api (mostly Fitness)
 - MTApp = Mobile/Tablet application for 
 
-
 ## Key function of the solution:
 - Smart band colects R health data
 - Data is viewable for FM who can monitor health of his/her relative
@@ -23,11 +22,11 @@
 - D enters R health data to the system
 - CO enters info about daily activites, menus etc.
 
-
 ## TODO
 - [x] Integrate my Smart Watch to Google Fit
 - [x] Get access to GA (via Browser)
-- [ ] Get data from GA using .NET Code
+- [x] Get data from GA using .NET Code
+- [ ] Setup Azure Functions for quering data From GA
 - [ ] Store health data in No-SQL db
 - [ ] Prepare a C# project with domain concerns (reusable)
 - [ ] Prepare FE in React for FM
@@ -43,17 +42,7 @@
 1. [Official Google FitnessApi Doc](https://developers.google.com/api-client-library/dotnet/apis/fitness/v1)
 
 ## Credential
-Google Api Key is on Slack!
+Get OAuth Token json configuration from Google
 
-## Misc
-- GoogleApi Playground - get all datasets
-Request URI https://fitness.googleapis.com/fitness/v1/users/me/dataSources
-- Google Api Playground - get height https://fitness.googleapis.com/fitness/v1/users/me/dataSources/raw:com.google.height:com.google.android.apps.fitness:user_input/dataPointChanges
-
----
-
-# How to set it up for a rin
-
-1. Creare a file `client_secrets.json` in the project folder with Google OAuth Token (you can get it from: https://console.cloud.google.com/apis/credentials
-1. Mark it property in Visual Studio as "Copy Always"
-1. Run the app
+## Miscellaneous
+[Azure Free Servies](https://azure.microsoft.com/en-us/pricing/free-services)
