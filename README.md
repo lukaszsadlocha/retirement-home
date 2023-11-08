@@ -26,8 +26,10 @@
 - [x] Integrate my Smart Watch to Google Fit
 - [x] Get access to GA (via Browser)
 - [x] Get data from GA using .NET Code
+- [X] Setup Azure Functions manipulating dummy daya
+- [ ] Store random data in No-SQL db in Azure
 - [ ] Setup Azure Functions for quering data From GA
-- [ ] Store health data in No-SQL db
+- [ ] Store health data in No-SQL db in Azure
 - [ ] Prepare a C# project with domain concerns (reusable)
 - [ ] Prepare FE in React for FM
 - [ ] Prepare MTApp in .net MAUI

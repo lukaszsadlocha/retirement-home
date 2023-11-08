@@ -12,6 +12,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 		RequestBodyAggregate4DaysOfSteps.json = RequestBodyAggregate4DaysOfSteps.json
 	EndProjectSection
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RetirementHome.Functions", "RetirementHome.Functions\RetirementHome.Functions.csproj", "{3093B5D8-9291-43F0-8113-99FEBF2671D9}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -22,6 +24,10 @@ Global
 		{E393F8A2-D779-43DF-97E7-73A03235CBE4}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E393F8A2-D779-43DF-97E7-73A03235CBE4}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E393F8A2-D779-43DF-97E7-73A03235CBE4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3093B5D8-9291-43F0-8113-99FEBF2671D9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3093B5D8-9291-43F0-8113-99FEBF2671D9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3093B5D8-9291-43F0-8113-99FEBF2671D9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3093B5D8-9291-43F0-8113-99FEBF2671D9}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
