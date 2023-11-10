@@ -27,6 +27,7 @@
 - [x] Get access to GA (via Browser)
 - [x] Get data from GA using .NET Code
 - [X] Setup Azure Functions manipulating dummy daya
+- [ ] Add documentation diagram that shows projects (Mermaid)
 - [ ] Store random data in No-SQL db in Azure
 - [ ] Setup Azure Functions for quering data From GA
 - [ ] Store health data in No-SQL db in Azure
@@ -42,6 +43,8 @@
 1. [Google Api Playground](https://developers.google.com/oauthplayground/)
 1. [Example of C# code using FitnessApi](https://keestalkstech.com/2016/07/getting-your-weight-from-google-fit-with-c/)
 1. [Official Google FitnessApi Doc](https://developers.google.com/api-client-library/dotnet/apis/fitness/v1)
+1. [Marmaid Docks](https://mermaid.js.org/syntax/flowchart.html)
+
 
 ## Credential
 Get OAuth Token json configuration from Google
