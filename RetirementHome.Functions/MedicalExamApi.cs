@@ -12,6 +12,7 @@ using Azure;
 using System.Collections.Generic;
 using System.Linq;
 using System.Collections.Concurrent;
+using Microsoft.WindowsAzure.Storage;
 
 namespace RetirementHome.Functions
 {
@@ -101,32 +102,25 @@ namespace RetirementHome.Functions
             return new OkObjectResult(existingRow.ToMedicalExam());
         }
 
-        //[FunctionName("DeleteMedicalExamById")]
-        //public static async Task<IActionResult> DeleteMedicalExamById(
-        //    [HttpTrigger(AuthorizationLevel.Anonymous, "delete", Route = "medicalexam/{id}")] HttpRequest req,
-        //    [Table("MedicalExams", Connection = "AzureWebJobsStorage")] CloudTable medicalExamTable, 
-        //    ILogger log, string id)
-        //{
-        //    log.LogInformation("Deleting MedicalExam by id = {id}", id);
+        [FunctionName("DeleteMedicalExamById")]
+        public static async Task<IActionResult> DeleteMedicalExamById(
+            [HttpTrigger(AuthorizationLevel.Anonymous, "delete", Route = "medicalexam/{id}")] HttpRequest req,
+            [Table("MedicalExams", Connection = "AzureWebJobsStorage")] TableClient medicalExamsTableClient,
+            ILogger log, string id)
+        {
+            log.LogInformation("Deleting MedicalExam by id = {id}", id);
 
-        //    var deleteOperation = TableOperation.Delete(new TableEntity
-        //    {
-        //        PartitionKey = "MEDICAL_EXAM",
-        //        RowKey = id,
-        //        ETag = "*"
-        //    });
+            try
+            {
+                var deleteResult = await medicalExamsTableClient.DeleteEntityAsync("MEDICAL_EXAM", id);
+            }
+            catch (StorageException e) when (e.RequestInformation.HttpStatusCode == 404)
+            {
+                return new NotFoundResult();
+            }
 
-        //    try
-        //    {
-        //        var deleteResult = await medicalExamTable.ExecuteAsync(deleteOperation);
-        //    }
-        //    catch (StorageException e) when (e.RequestInformation.HttpStatusCode == 404)
-        //    {
-        //        return new NotFoundResult();
-        //    }
-
-        //    return new OkResult();
-        //}
+            return new OkResult();
+        }
     }
 
     public class MedicalExam
