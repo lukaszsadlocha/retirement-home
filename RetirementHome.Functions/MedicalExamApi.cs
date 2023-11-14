@@ -38,21 +38,17 @@ namespace RetirementHome.Functions
         [FunctionName("GetMedicalExams")]
         public static async Task<IActionResult> GetMedicalExams(
             [HttpTrigger(AuthorizationLevel.Anonymous, "get", Route = "medicalexam")] HttpRequest req,
-            [Table("MedicalExams", Connection = "AzureWebJobsStorage")] TableClient medicalExamsTableClient,
+            [Table(tableName:"MedicalExams", partitionKey: "MEDICAL_EXAM", Connection = "AzureWebJobsStorage", Take = 10)] TableClient medicalExamsTableClient,
             ILogger log)
         {
             log.LogInformation("Getting MedicalExam list");
 
+            var queryResultsMaxPerPage = medicalExamsTableClient.QueryAsync<MedicalExamTableEntity>();
+
             var medicalExamList = new List<MedicalExam>();
-
-            var queryResultsMaxPerPage = medicalExamsTableClient.QueryAsync<MedicalExamTableEntity>(filter: $"PartitionKey eq 'MEDICAL_EXAM'", maxPerPage: 10);
-
-            await foreach (Page<MedicalExamTableEntity> page in queryResultsMaxPerPage.AsPages())
-            {                
-                foreach (MedicalExamTableEntity exam in page.Values)
-                {
-                    medicalExamList.Add(exam.ToMedicalExam());
-                }
+            await foreach (var page in queryResultsMaxPerPage.AsPages())
+            {
+                medicalExamList.AddRange(page.Values.Select(exam => exam.ToMedicalExam()));
             }
 
             return new OkObjectResult(medicalExamList);
