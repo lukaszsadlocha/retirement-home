@@ -54,52 +54,52 @@ namespace RetirementHome.Functions
             return new OkObjectResult(medicalExamList);
         }
 
-        //[FunctionName("GetMedicalExamById")]
-        //public static async Task<IActionResult> GetMedicalExamById(
-        //    [HttpTrigger(AuthorizationLevel.Anonymous, "get", Route = "medicalexam/{id}")] HttpRequest req,
-        //    [Table("MedicalExams", partitionKey: "MEDICAL_EXAM", rowKey: "{id}", Connection = "AzureWebJobsStorage")] MedicalExamTableEntity exam,
-        //    ILogger log, string id)
-        //{
-        //    log.LogInformation("Getting MedicalExam by id = {id}", id);
+        [FunctionName("GetMedicalExamById")]
+        public static async Task<IActionResult> GetMedicalExamById(
+            [HttpTrigger(AuthorizationLevel.Anonymous, "get", Route = "medicalexam/{id}")] HttpRequest req,
+            [Table("MedicalExams", partitionKey: "MEDICAL_EXAM", rowKey: "{id}", Connection = "AzureWebJobsStorage")] MedicalExamTableEntity exam,
+            ILogger log, string id)
+        {
+            log.LogInformation("Getting MedicalExam by id = {id}", id);
 
-        //    if (exam == null)
-        //    {
-        //        return new NotFoundResult();
-        //    }
+            if (exam == null)
+            {
+                return new NotFoundResult();
+            }
 
-        //    return new OkObjectResult(exam.ToMedicalExam());
-        //}
+            return new OkObjectResult(exam.ToMedicalExam());
+        }
 
-        //[FunctionName("UpdateMedicalExamById")]
-        //public static async Task<IActionResult> UpdateMedicalExamById(
-        //    [HttpTrigger(AuthorizationLevel.Anonymous, "put", Route = "medicalexam/{id}")] HttpRequest req,
-        //    [Table("MedicalExams", Connection = "AzureWebJobsStorage")] CloudTable medicalExamTable, 
-        //    ILogger log, string id)
-        //{
-        //    log.LogInformation("Updating MedicalExam by id = {id}", id);
+        [FunctionName("UpdateMedicalExamById")]
+        public static async Task<IActionResult> UpdateMedicalExamById(
+            [HttpTrigger(AuthorizationLevel.Anonymous, "put", Route = "medicalexam/{id}")] HttpRequest req,
+            [Table("MedicalExams", Connection = "AzureWebJobsStorage")] TableClient medicalExamsTableClient,
+            ILogger log, string id)
+        {
+            log.LogInformation("Updating MedicalExam by id = {id}", id);
 
-        //    string requestBody = await new StreamReader(req.Body).ReadToEndAsync();
-        //    var updated = JsonConvert.DeserializeObject<MedicalExamUpdateModel>(requestBody);
+            string requestBody = await new StreamReader(req.Body).ReadToEndAsync();
+            var updated = JsonConvert.DeserializeObject<MedicalExamUpdateModel>(requestBody);
 
-        //    var findOperation = TableOperation.Retrieve<MedicalExamTableEntity>("MEDICAL_EXAM", id);
-        //    var findResult = await medicalExamTable.ExecuteAsync(findOperation);
-        //    if(findResult.Result == null)
-        //    {
-        //        return new NotFoundResult();
-        //    }
+            var findResult = await medicalExamsTableClient.GetEntityIfExistsAsync<MedicalExamTableEntity>("MEDICAL_EXAM", id);
 
-        //    var existingRow =  (MedicalExamTableEntity)findResult.Result;
-        //    existingRow.IsCompleted = updated.IsCompleted;
-        //    if(!string.IsNullOrEmpty(updated.Description))
-        //    {
-        //        existingRow.Description = updated.Description;
-        //    }
+            if (!findResult.HasValue)
+            {
+                return new NotFoundResult();
+            }
 
-        //    var replaceOperation = TableOperation.Replace(existingRow);
-        //    await medicalExamTable.ExecuteAsync(replaceOperation);
+            var existingRow = findResult.Value;
 
-        //    return new OkObjectResult(existingRow.ToMedicalExam());
-        //}
+            existingRow.IsCompleted = updated.IsCompleted;
+            if (!string.IsNullOrEmpty(updated.Description))
+            {
+                existingRow.Description = updated.Description;
+            }
+
+            var replaceOperation = await medicalExamsTableClient.UpdateEntityAsync<MedicalExamTableEntity>(existingRow, ETag.All);
+            
+            return new OkObjectResult(existingRow.ToMedicalExam());
+        }
 
         //[FunctionName("DeleteMedicalExamById")]
         //public static async Task<IActionResult> DeleteMedicalExamById(
