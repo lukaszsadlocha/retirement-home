@@ -28,8 +28,9 @@
 - [x] Get data from GA using .NET Code
 - [x] Setup Azure Functions manipulating dummy daya
 - [x] Add documentation diagram that shows projects (Mermaid)
-- [ ] Store random data in No-SQL db in Azure
-- [ ] Setup Azure Functions for quering data From GA
+- [x] Store random data in No-SQL storage in Azure
+- [ ] Setup ServiceBus that will be integrated with connectors
+- [ ] Setup Azure Functions for quering data From GA (e.g. 1 per day)
 - [ ] Store health data in No-SQL db in Azure
 - [ ] Prepare a C# project with domain concerns (reusable)
 - [ ] Prepare FE in React for FM
