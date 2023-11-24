@@ -47,8 +47,16 @@
 1. [Marmaid Docks](https://mermaid.js.org/syntax/flowchart.html)
 
 
-## Credential
+## Credential for GoogleFit
 Get OAuth Token json configuration from Google
+
+## Credential for Azure ServiceBus
+In Azure portal get Primarry connection string and add it to user secrets
+
+### User Secrets Setup:
+`dotnet user-secrets init`
+
+`dotnet user-secrets set "ConnectionStrings:AzureServiceBus" "Primary Connection String"`
 
 ## Miscellaneous
 [Azure Free Servies](https://azure.microsoft.com/en-us/pricing/free-services)
