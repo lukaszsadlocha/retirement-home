@@ -17,8 +17,7 @@ namespace RetirementHome.ServiceBus.Sender
             var queueName = configuration.GetSection("queueName").Value;
 
             var client = new ServiceBusClient(azServiceBusConnString);
-
-            // Sending to Azure ServiceBus
+            
             var sender = client.CreateSender(queueName);
 
             var stingToSent = $"This message was prepared at: {DateTime.UtcNow}";
@@ -32,34 +31,6 @@ namespace RetirementHome.ServiceBus.Sender
 
             Console.WriteLine("Sent\n");
 
-
-            // Receiving
-            var receiver = client.CreateReceiver(queueName);
-
-            var cts = new CancellationTokenSource(10000);
-            var cancellationToken = cts.Token;
-
-            while (!cancellationToken.IsCancellationRequested)
-            {
-                var receivedMessage = await receiver.ReceiveMessageAsync();
-
-                if(receivedMessage != null)
-                {
-                    Console.WriteLine($"Received message: {receivedMessage.Body}");
-
-                    //Complete the messae
-                    await receiver.CompleteMessageAsync(receivedMessage);
-                }
-                else
-                {
-                    Console.WriteLine();
-                    Console.WriteLine("All messages received.");
-                    break;
-                }
-            }
-
-            // Close the receiver
-            await receiver.CloseAsync();
         }
     }
 }
