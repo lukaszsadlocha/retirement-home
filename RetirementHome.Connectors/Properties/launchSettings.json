@@ -1,0 +1,9 @@
+{
+  "profiles": {
+    "RetirementHome.Connectors": {
+      "commandName": "Project",
+      "commandLineArgs": "--port 7177",
+      "launchBrowser": false
+    }
+  }
+}
