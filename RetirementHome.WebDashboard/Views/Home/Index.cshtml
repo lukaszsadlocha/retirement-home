@@ -1,0 +1,24 @@
+﻿@model IEnumerable<Resident>
+@{
+
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Welcome</h1>
+    <div id="residents">
+        @foreach (var resident in Model)
+        {
+            <p>@resident.FirstName @resident.LastName</p>
+
+        }
+    </div>
+    <input id="firstNameInput" />
+    <input id="lastNameInput" />
+    <button type="button" onClick="addResident()">Add Resident</button>
+</div>
+
+@section Scripts{
+    <script src="~/js/signalr/dist/browser/signalr.min.js"></script>
+    <script src="~/js/homeindex.js"></script>
+}

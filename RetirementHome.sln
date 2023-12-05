@@ -15,11 +15,13 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RetirementHome.Functions", "RetirementHome.Functions\RetirementHome.Functions.csproj", "{3093B5D8-9291-43F0-8113-99FEBF2671D9}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RetirementHome.ServiceBus.Sender", "RetirementHome.ServiceBus.Sender\RetirementHome.ServiceBus.Sender.csproj", "{B20D9114-8636-428D-BD9E-E9BDA8CEE15E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RetirementHome.ServiceBus.Sender", "RetirementHome.ServiceBus.Sender\RetirementHome.ServiceBus.Sender.csproj", "{B20D9114-8636-428D-BD9E-E9BDA8CEE15E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RetirementHome.Connectors", "RetirementHome.Connectors\RetirementHome.Connectors.csproj", "{73C52862-A78C-4F85-9DBC-3820FF43BFD2}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RetirementHome.Connectors", "RetirementHome.Connectors\RetirementHome.Connectors.csproj", "{73C52862-A78C-4F85-9DBC-3820FF43BFD2}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RetirementHome.ServiceBus.Reciever", "RetirementHome.ServiceBus.Reciever\RetirementHome.ServiceBus.Reciever.csproj", "{370B3163-8B59-439C-989C-DD6952AB457A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RetirementHome.ServiceBus.Reciever", "RetirementHome.ServiceBus.Reciever\RetirementHome.ServiceBus.Reciever.csproj", "{370B3163-8B59-439C-989C-DD6952AB457A}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RetirementHome.WebDashboard", "RetirementHome.WebDashboard\RetirementHome.WebDashboard.csproj", "{0F5CEAA3-4002-4AC1-A48A-45FC2ECDDBAB}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -47,6 +49,10 @@ Global
 		{370B3163-8B59-439C-989C-DD6952AB457A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{370B3163-8B59-439C-989C-DD6952AB457A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{370B3163-8B59-439C-989C-DD6952AB457A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0F5CEAA3-4002-4AC1-A48A-45FC2ECDDBAB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0F5CEAA3-4002-4AC1-A48A-45FC2ECDDBAB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0F5CEAA3-4002-4AC1-A48A-45FC2ECDDBAB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0F5CEAA3-4002-4AC1-A48A-45FC2ECDDBAB}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
