@@ -5,6 +5,8 @@ using RetirementHome.WebDashboard.Abstractions;
 using RetirementHome.WebDashboard.Data;
 using RetirementHome.WebDashboard.Hubs;
 using System.Text.Json;
+using Microsoft.AspNetCore.Authentication.Cookies;
+using Microsoft.AspNetCore.Authentication.Google;
 
 namespace RetirementHome.WebDashboard
 {
@@ -24,9 +26,33 @@ namespace RetirementHome.WebDashboard
                 .AddEntityFrameworkStores<ApplicationDbContext>();
             builder.Services.AddControllersWithViews();
 
+            var configuration = new ConfigurationBuilder()
+                .AddUserSecrets<Program>()
+                .Build();
+
+            var googleOAuthClientId = configuration.GetSection("GoogleOAuth:ClientID").Value;
+            var googleOAuthClientSecret = configuration.GetSection("GoogleOAuth:ClientSecret").Value;
+
+
+            builder.Services.AddAuthentication(options =>
+                {
+                    options.DefaultScheme = CookieAuthenticationDefaults.AuthenticationScheme;
+                    options.DefaultChallengeScheme = GoogleDefaults.AuthenticationScheme;
+                })
+                .AddCookie(options => options.LoginPath = "/Home/Login")
+                .AddGoogle(options =>
+                {
+                    options.ClientId = googleOAuthClientId; 
+                    options.ClientSecret = googleOAuthClientSecret;
+
+                });
+
+
             builder.Services.AddSignalR();
 
             builder.Services.AddSingleton<IResidentsRepository, ResidentsRepository>();
+
+            builder.Configuration.AddUserSecrets<Program>();
 
             var app = builder.Build();
 
@@ -47,11 +73,15 @@ namespace RetirementHome.WebDashboard
 
             app.UseRouting();
 
+            app.UseAuthentication();
+            app.UseAuthorization();
+
             app.UseAuthorization();
 
             app.MapControllerRoute(
                 name: "default",
                 pattern: "{controller=Home}/{action=Index}/{id?}");
+            
             app.MapRazorPages();
 
             app.MapPost("/resident/new", async (HttpRequest request, IResidentsRepository residentsRepository) =>

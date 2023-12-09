@@ -58,5 +58,10 @@ In Azure portal get Primarry connection string and add it to user secrets
 
 `dotnet user-secrets set "ConnectionStrings:AzureServiceBus" "Primary Connection String"`
 
+## Credential for OAuth2.0. WebDashboard
+https://console.cloud.google.com/apis/credentials?project=retirement-home-web-dashboard
+Click on:
+OAuth 2.0 Client IDs
+
 ## Miscellaneous
 [Azure Free Servies](https://azure.microsoft.com/en-us/pricing/free-services)
